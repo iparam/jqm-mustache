@@ -1,0 +1,26 @@
+<div data-role="page" data-theme="c" >
+  <div data-role="header" id="projects_header">
+     <h1> Show Page </h1>
+  </div>
+  <div data-role="content" data-theme="c" id="alert_index"> 
+    <ul data-role="listview" data-filter="true" id="project_show">
+    </ul>
+  </div> 
+
+  <script type="text/template" id="mproject_show">
+  <li>
+    <img src= '/assets/glyphicons_064_lightbulb.png' class="ui-li-icon alert-icon"/>
+    <a href="#" >    
+      <div class="alert-title">{{ name }}</div>  
+      <div class="alert-trend">{{ description }}</div>
+      <div class="alert-value">{{ start_date}} - {{ end_date }}</div>
+    </a>    
+  </li>
+</script>
+
+
+<script type="text/javascript">
+  PMS.projects.show(window.DataId);
+</script>     
+</div>  
+

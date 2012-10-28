@@ -1,0 +1,35 @@
+<div data-role="page" data-theme="c">
+  <div data-role="header" id="projects_header">
+  </div>
+
+  <div data-role="content" data-theme=c> 
+    <ul data-role="listview" id="projects_index">
+    </ul>
+  </div>
+</div>
+
+<script id="mheader" type="text/template">
+  <h1> {{header}} </h1>
+</script> 
+
+<script id="mlistview" type="text/template">
+  {{#projects}}
+    <li><a href="/project_show" data-id={{id}}>{{name}}</a></li>
+  {{/projects}}  
+</script>
+
+<script type="text/javascript">
+  PMS.projects.index({title: "My Projects"},"/projects.json")
+  $("a").live("click",function() {
+    console.log("There");
+    console.log(this)
+    console.log($(this).data("id"));
+    window.DataId = $(this).data("id");
+  })
+</script>
+
+
+
+
+
+
